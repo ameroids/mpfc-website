@@ -2105,40 +2105,49 @@ form {
 
 @media (max-width: 767px), (orientation: portrait) {
   .nav {
-    padding: 12px 18px;
+    padding: 10px 16px;
+  }
+  .mpfc-navbar-logo {
+    height: 38px;
+  }
+  .pillo-red {
+    padding: 8px 14px;
+    font-size: 10.5px;
   }
   .desktop-nav {
     display: none;
   }
   .giant {
-    font-size: calc(var(--u) * 180);
+    font-size: calc(var(--u) * 140);
   }
   .telemetry-bar {
-    left: 16px;
-    top: 90px;
-    padding: 6px 12px;
+    left: 12px;
+    top: 76px;
+    padding: 4px 10px;
   }
   .hide-mobile {
     display: none;
   }
   .strip {
-    top: calc(var(--u) * 44);
-    gap: calc(var(--u) * 56);
-    padding-left: 18px;
+    top: calc(var(--edge-px) - 60px);
+    gap: calc(var(--u) * 44);
+    padding-left: 16px;
   }
   .lead {
-    gap: calc(var(--u) * 20);
+    gap: 14px;
   }
   .hero-h2 {
-    font-size: calc(var(--u) * 44);
+    font-size: clamp(28px, 7vw, 36px);
     white-space: normal;
+    line-height: 1.05;
   }
   .paras {
-    width: calc(var(--u) * 310);
-    font-size: calc(var(--u) * 13);
+    width: min(90vw, 320px);
+    font-size: 12.5px;
   }
   .red-card {
-    width: calc(var(--u) * 260);
+    width: 250px;
+    padding: 20px;
   }
   .form-row-2 {
     grid-template-columns: 1fr;
@@ -2148,6 +2157,12 @@ form {
     align-items: flex-start;
   }
   .btn-red-glow {
+    width: 100%;
+  }
+  .scroll-indicator {
+    bottom: 14px;
+  }
+}
     width: 100%;
   }
 }

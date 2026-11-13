@@ -12,14 +12,23 @@ let vw,vh,B,stripW,giantW,cur=0,spd=0,lastY=0,lastT=performance.now(),recSpeed=n
 function layout(){
  vw=innerWidth;vh=scene.clientHeight||innerHeight;
  const mob=vw<768||vw<=vh;
- const u=mob?Math.min(vw/430,1.4):Math.min(vw/1440,vh/960);
+ const u=mob?Math.min(vw/430,1.2):Math.min(vw/1440,vh/960);
  R.style.setProperty('--u',u+'px');
  let w,h,l,t;
- if(!mob){const s=Math.max(vw/1920,vh/1080);w=1920*s;h=1080*s;l=(vw-w)/2;t=(vh-h)/2}
- else{w=vw*1.55;h=w*9/16;l=vw/2-.4*w;t=.36*vh-.448*h}
+ if(!mob){
+   const s=Math.max(vw/1920,vh/1080);
+   w=1920*s;h=1080*s;
+   l=(vw-w)/2;t=(vh-h)/2;
+ } else {
+   // Mobile / Portrait: Maintain full aspect ratio so the entire vehicle fits on screen
+   w=Math.max(vw*1.15, 420);
+   h=w*9/16;
+   l=(vw-w)/2;
+   t=Math.max(70, vh*0.35 - h*0.5);
+ }
  Object.assign(v.style,{width:w+'px',height:h+'px',left:l+'px',top:t+'px'});
- R.style.setProperty('--edge-px',(t+.448*h)+'px');
- R.style.setProperty('--l',Math.round(t+.829*h)+'px');
+ R.style.setProperty('--edge-px',Math.round(t+h*0.82)+'px');
+ R.style.setProperty('--l',Math.round(t+h)+'px');
  const want=vw<=900?LO:HI;
  if(want!==src){src=want;v.src=want;v.load()}
  stripW=strip.scrollWidth;giantW=giant.scrollWidth;
