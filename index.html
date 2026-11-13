@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP Freight Carrier (MPFC) | Your Load, Our Responsibility</title>
+  <meta name="description" content="MP Freight Carrier (MPFC) — Trusted pan-India transport contractor with 20+ years of experience. Heavy-duty 12 & 14-tyre lorries, specialized paper roll lifting, and FTL operations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="theme-red">
+  <!-- Precision Cursor -->
+  <div id="customCursor" class="custom-cursor">
+    <span class="cursor-text" id="cursorText"></span>
+  </div>
+
+  <!-- Red Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Ambient Red Atmospheric Glows -->
+  <div class="ambient-glow glow-red-1"></div>
+  <div class="ambient-glow glow-red-2"></div>
+
+  <!-- Toast Notification Drawer -->
+  <div class="toast-shelf" id="toastShelf"></div>
+
+  <!-- Quick Fleet Spec Modal -->
+  <div class="quick-modal-backdrop" id="quickModal">
+    <div class="quick-modal-panel" id="quickModalContent">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-visual" id="modalVisual">
+        <div class="modal-badge-float">MPFC SPEC</div>
+        <img src="" alt="Fleet Asset" id="modalImg" class="modal-img">
+      </div>
+      <div class="modal-info">
+        <span class="modal-eyebrow" id="modalCategory">CARRIER TYPE</span>
+        <h3 class="modal-title" id="modalTitle">14-Tyre Heavy Lorry</h3>
+        <div class="modal-price-row">
+          <span class="modal-capacity" id="modalPayload">Capacity: 30 Tons</span>
+          <span class="modal-rate" id="modalRate">Pan-India Transit Available</span>
+        </div>
+        <p class="modal-desc" id="modalDesc">Heavy-duty chassis designed for heavy bulk consignments, industrial manufacturing lines, and raw materials with round-the-clock GPS tracking.</p>
+        
+        <div class="modal-spec-grid">
+          <div class="spec-cell">
+            <span class="spec-label">TONNAGE SLA</span>
+            <span class="spec-val" id="modalDim">25 - 30 Metric Tons</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-label">HUBS</span>
+            <span class="spec-val" id="modalSla">Burhanpur & Raipur</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-label">HANDLING</span>
+            <span class="spec-val">Damage-Free Assured</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-label">EXPERIENCE</span>
+            <span class="spec-val">20+ Years Track Record</span>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-red btn-block" id="modalBookBtn">Select for Direct Dispatch →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Announcement Ticker -->
+  <div class="top-announcement">
+    <div class="announcement-track">
+      <span>★ 20+ YEARS OF TRANSPORT EXCELLENCE</span>
+      <span>•</span>
+      <span>BURHANPUR (M.P.) & RAIPUR (C.G.) DIRECT HUBS</span>
+      <span>•</span>
+      <span>SPECIALIZED PAPER ROLL LIFTING & FTL</span>
+      <span>•</span>
+      <span>12-TYRE (25 TONS) & 14-TYRE (30 TONS) HEAVY FLEET</span>
+      <span>•</span>
+      <span>★ 20+ YEARS OF TRANSPORT EXCELLENCE</span>
+      <span>•</span>
+      <span>BURHANPUR (M.P.) & RAIPUR (C.G.) DIRECT HUBS</span>
+      <span>•</span>
+      <span>SPECIALIZED PAPER ROLL LIFTING & FTL</span>
+    </div>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#" class="brand-link" id="brandLink">
+        <img src="assets/mpfc-orig-logo.png" alt="MPFC - Madhya Pradesh Freight Carrier" class="mpfc-navbar-logo">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#fleet-models" class="nav-link">Heavy Fleet</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#clients" class="nav-link">Our Clients</a>
+        <a href="#coverage" class="nav-link">Hubs & Routes</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#quote" class="pillo-red">
+          <span>CONTACT US NOW</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Track & Video Scrubbing Canvas -->
+  <div class="track" id="track">
+    <div class="scene" id="scene">
+      <!-- Modern Architectural Logistics Grid & Engineering Crosses -->
+      <div class="hero-tech-grid"></div>
+      <div class="hero-radial-vignette"></div>
+
+      <video id="v" muted playsinline preload="auto" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/2307e4bf-be39-42b4-b579-e168aeccabf0.jpg"></video>
+      <div class="video-overlay-red"></div>
+      
+      <div class="giant" id="giant">SPEED & POWER</div>
+
+      <div class="scroll-indicator">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span>SCROLL TO ENGAGE FULL ENGINE</span>
+      </div>
+
+      <!-- Horizontal scrolling strip -->
+      <div class="band">
+        <div class="strip" id="strip">
+          <div class="lead">
+            <div class="status-pill-red">
+              <span class="badge-red-dot"></span>
+              20+ YEARS OF RELIABLE FREIGHT
+            </div>
+            <h2 class="hero-h2">
+              YOUR LOAD,<br>OUR RESPONSIBILITY.<br>
+              <span class="hero-red-highlight">MP FREIGHT CARRIER</span>
+            </h2>
+            <div class="paras">
+              <p>Reliable freight transport in India backed by over 20 years of experience. We provide safe, transparent, and timely logistics pan-India with dedicated bases in Burhanpur (M.P.) and Raipur (C.G.).</p>
+              <p>Specialists in paper roll lifting, heavy industrial bulk consignments, and full-truckload (FTL) lorry supply.</p>
+              <div class="hero-actions">
+                <a href="#quote" class="hero-btn primary-red">Request Free Quotation</a>
+                <a href="#fleet-models" class="hero-btn secondary-ghost">Explore Heavy Fleet</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cards" id="services">
+            <div class="card red-card">
+              <div class="card-num">01</div>
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 40 40"><path d="M3 10h22v18H3zM25 16h8l4 6v6H25zM10 32a3 3 0 1 0 0 .1M30 32a3 3 0 1 0 0 .1"/></svg>
+              </div>
+              <span class="card-tag">Core Specialization</span>
+              <h3>Transport<br>Contractor</h3>
+              <p>Specialized in paper roll lifting, bulk industrial consignments, and dedicated FTL services designed for businesses requiring heavy load movement.</p>
+            </div>
+
+            <div class="card red-card">
+              <div class="card-num">02</div>
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 40 40"><path d="M6 36V8h20l8 6M26 8v10M26 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6M26 24v3M18 36v-8h16v8zM6 14h8"/></svg>
+              </div>
+              <span class="card-tag">Heavy Capacity</span>
+              <h3>Lorry<br>Supplier</h3>
+              <p>Well-maintained, excellent condition 12-tyre (25 tons) and 14-tyre (30 tons) heavy lorries ready for immediate pan-India long-haul dispatch.</p>
+            </div>
+
+            <div class="card red-card">
+              <div class="card-num">03</div>
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 40 40"><path d="M4 8h14v24H4zM22 14h14v18H22zM4 20h14M22 24h14"/></svg>
+              </div>
+              <span class="card-tag">Expert Handling</span>
+              <h3>Specialized<br>Paper Rolls</h3>
+              <p>Skilled teams and specialized lifting methods ensure damage-free, safe transport for major newspaper printing houses and paper mills across India.</p>
+            </div>
+
+            <div class="card red-card">
+              <div class="card-num">04</div>
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 40 40"><path d="M9 4h16l7 7v25H9zM25 4v7h7M14 26l4 4 8-9M14 15h7"/></svg>
+              </div>
+              <span class="card-tag">Telematics</span>
+              <h3>Live GPS<br>Tracking</h3>
+              <p>Real-time vehicle tracking to monitor your consignment at every stage, providing total visibility, security, and verified proof of delivery.</p>
+            </div>
+
+            <div class="card red-card">
+              <div class="card-num">05</div>
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 40 40"><path d="M3 16L20 6l17 10v20H3zM10 36V22h20v14M10 28h20M10 32h20"/></svg>
+              </div>
+              <span class="card-tag">Central Hubs</span>
+              <h3>Burhanpur &<br>Raipur Operations</h3>
+              <p>Dual headquarters connecting Madhya Pradesh, Chhattisgarh, Maharashtra, and all national highway links seamlessly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pill-red-sticky">
+          <span class="pill-dot-white"></span>
+          Scroll for Fleet Specs & Client Trust
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Highway Highlights Showcase Strip -->
+  <section class="highway-highlights-strip">
+    <div class="wrap">
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="h-icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <strong>20+ Years Experience</strong>
+            <span>Decades of trusted paper roll & industrial bulk logistics</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="h-icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>Safe & Damage-Free</strong>
+            <span>Specialized loading methods for paper mills & heavy cargo</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="h-icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <strong>12 & 14-Tyre Heavy Lorries</strong>
+            <span>25-ton and 30-ton high-capacity fleets in prime condition</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="h-icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Burhanpur & Raipur Hubs</strong>
+            <span>Strategic nerve centers providing rapid pan-India transit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Fleet Models Showcase -->
+  <section class="page fleet-section" id="fleet-models">
+    <div class="wrap">
+      <div class="section-head-split reveal">
+        <div>
+          <span class="eyebrow-red">HEAVY TRUCK SPECIFICATIONS</span>
+          <h2 class="title-bold">THE MPFC HEAVY LORRY FLEET</h2>
+          <p class="lead-text">Choose the optimal lorry specification tailored for your tonnage, paper rolls, or bulk cargo requirements.</p>
+        </div>
+        <div class="category-tabs" id="fleetTabs">
+          <button class="cat-tab active" data-cat="all">All Lorries</button>
+          <button class="cat-tab" data-cat="14tyre">14-Tyre (30T)</button>
+          <button class="cat-tab" data-cat="12tyre">12-Tyre (25T)</button>
+          <button class="cat-tab" data-cat="paper">Paper Roll Heavy</button>
+        </div>
+      </div>
+
+      <div class="fleet-grid" id="fleetGrid">
+        <!-- Fleet Item 1 -->
+        <div class="fleet-card reveal" data-category="14tyre" data-id="1">
+          <div class="fleet-badge">HEAVY HAUL 30 TONS</div>
+          <div class="fleet-img-box">
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="14-Tyre Heavy Multi-Axle Lorry" class="truck-photo">
+            <button class="quick-view-btn" data-truck="1">Inspect Specs +</button>
+          </div>
+          <div class="fleet-card-body">
+            <span class="truck-cat">14-Tyre Heavy Lorry</span>
+            <h4 class="truck-name">14-Tyre Multi-Axle Carrier</h4>
+            <div class="truck-stats">
+              <span><b>Payload Capacity:</b> 30 Metric Tons</span>
+              <span><b>Use Cases:</b> Industrial Steel, Heavy Bulk & Raw Materials</span>
+            </div>
+            <div class="card-footer-flex">
+              <span class="truck-price">30 Tons Capacity</span>
+              <button class="select-truck-btn" data-truck-name="14-Tyre Heavy Lorry (30 Tons)" data-type="14 Tyre (30 Tons)">Book Lorry →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fleet Item 2 -->
+        <div class="fleet-card reveal" data-category="12tyre" data-id="2">
+          <div class="fleet-badge">BULK FTL 25 TONS</div>
+          <div class="fleet-img-box">
+            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800" alt="12-Tyre Lorry" class="truck-photo">
+            <button class="quick-view-btn" data-truck="2">Inspect Specs +</button>
+          </div>
+          <div class="fleet-card-body">
+            <span class="truck-cat">12-Tyre Heavy Lorry</span>
+            <h4 class="truck-name">12-Tyre Taurus Lorry</h4>
+            <div class="truck-stats">
+              <span><b>Payload Capacity:</b> 25 Metric Tons</span>
+              <span><b>Use Cases:</b> Bulk Consignments, Heavy Freight & Mandi Goods</span>
+            </div>
+            <div class="card-footer-flex">
+              <span class="truck-price">25 Tons Capacity</span>
+              <button class="select-truck-btn" data-truck-name="12-Tyre Taurus Lorry (25 Tons)" data-type="12 Tyre (25 Tons)">Book Lorry →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fleet Item 3 -->
+        <div class="fleet-card reveal" data-category="paper" data-id="3">
+          <div class="fleet-badge">DAMAGE-FREE SPEC</div>
+          <div class="fleet-img-box">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Specialized Paper Roll Carrier" class="truck-photo">
+            <button class="quick-view-btn" data-truck="3">Inspect Specs +</button>
+          </div>
+          <div class="fleet-card-body">
+            <span class="truck-cat">Specialized Paper Carrier</span>
+            <h4 class="truck-name">Paper Roll Lifting Vehicle</h4>
+            <div class="truck-stats">
+              <span><b>Payload:</b> 20 - 28 Tons</span>
+              <span><b>Equipped:</b> Cradle Bracing & Soft Lashing Straps</span>
+            </div>
+            <div class="card-footer-flex">
+              <span class="truck-price">Paper Mill Spec</span>
+              <button class="select-truck-btn" data-truck-name="Specialized Paper Roll Carrier" data-type="Specialized Paper Roll Lifting">Book Carrier →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fleet Item 4 -->
+        <div class="fleet-card reveal" data-category="14tyre" data-id="4">
+          <div class="fleet-badge">LONG DISTANCE EXPRESS</div>
+          <div class="fleet-img-box">
+            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb395?auto=format&fit=crop&q=80&w=800" alt="Interstate Heavy Hauler" class="truck-photo">
+            <button class="quick-view-btn" data-truck="4">Inspect Specs +</button>
+          </div>
+          <div class="fleet-card-body">
+            <span class="truck-cat">Interstate Long-Haul</span>
+            <h4 class="truck-name">Interstate Heavy Linehaul</h4>
+            <div class="truck-stats">
+              <span><b>Payload:</b> 30 Tons Long-Distance</span>
+              <span><b>Routes:</b> MP, CG, Maharashtra, Gujarat & Delhi Corridors</span>
+            </div>
+            <div class="card-footer-flex">
+              <span class="truck-price">Pan-India Transit</span>
+              <button class="select-truck-btn" data-truck-name="Interstate Heavy Linehaul (30T)" data-type="14 Tyre (30 Tons)">Book Carrier →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Stats -->
+  <section class="performance-stats" id="stats">
+    <div class="wrap">
+      <div class="stats-container">
+        <div class="perf-item reveal">
+          <div class="perf-val" data-count="20">0<span>+</span></div>
+          <div class="perf-label">YEARS OF EXCELLENCE</div>
+          <p class="perf-sub">Decades of proven transport operations</p>
+        </div>
+        <div class="perf-item reveal">
+          <div class="perf-val" data-count="30">0<span>T</span></div>
+          <div class="perf-label">MAX SINGLE PAYLOAD</div>
+          <p class="perf-sub">Heavy 14-tyre lorry load capacity</p>
+        </div>
+        <div class="perf-item reveal">
+          <div class="perf-val" data-count="100">0<span>%</span></div>
+          <div class="perf-label">ON-TIME COMMITMENT</div>
+          <p class="perf-sub">Safe & damage-free delivery guarantee</p>
+        </div>
+        <div class="perf-item reveal">
+          <div class="perf-val" data-count="24">0<span>/7</span></div>
+          <div class="perf-label">LIVE TRACKING & SUPPORT</div>
+          <p class="perf-sub">Real-time status updates at every stage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Clients Section (Authentic client logos from mpfctransport.in) -->
+  <section class="page clients-section" id="clients">
+    <div class="wrap">
+      <div class="section-head-split reveal">
+        <div>
+          <span class="eyebrow-red">OUR ESTEEMED CLIENTS</span>
+          <h2 class="title-bold">TRUSTED BY INDUSTRY LEADERS</h2>
+          <p class="lead-text">Decades of continuous partnership with India's leading paper mills, publication houses, and industrial manufacturers.</p>
+        </div>
+      </div>
+
+      <div class="clients-card-strip reveal">
+        <div class="client-logo-box">
+          <img src="assets/real_media/1.webp" alt="Client 1" class="client-logo-img">
+        </div>
+        <div class="client-logo-box">
+          <img src="assets/real_media/2.webp" alt="Client 2" class="client-logo-img">
+        </div>
+        <div class="client-logo-box">
+          <img src="assets/real_media/3.webp" alt="Client 3" class="client-logo-img">
+        </div>
+        <div class="client-logo-box">
+          <img src="assets/real_media/4.webp" alt="Client 4" class="client-logo-img">
+        </div>
+        <div class="client-logo-box">
+          <img src="assets/real_media/6.webp" alt="Client 6" class="client-logo-img">
+        </div>
+        <div class="client-logo-box">
+          <img src="assets/real_media/7.webp" alt="Client 7" class="client-logo-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About MPFC Section (Authentic Story from mpfctransport.in) -->
+  <section class="page about-section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-red-card">
+            <div class="stamp-box">
+              <div class="stamp-acronym">MPFC</div>
+              <div class="stamp-text">ESTABLISHED 20+ YEARS</div>
+            </div>
+            <h3 class="about-card-title">SAFE, ON-TIME TRANSPORT IS OUR COMMITMENT</h3>
+            <p>MPFC is a trusted transport contractor with over 20 years of experience in delivering reliable and efficient logistics solutions pan-India. We operate from key hubs in Burhanpur (M.P.) and Raipur (C.G.), providing complete end-to-end freight support.</p>
+            <div class="cert-row">
+              <span>✓ Burhanpur (M.P.) Hub</span>
+              <span>✓ Raipur (C.G.) Hub</span>
+              <span>✓ 20+ Years Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text-content reveal">
+          <span class="eyebrow-red">ABOUT COMPANY</span>
+          <h2 class="title-bold">SERVING YOU WITH DEDICATION AND INNOVATION</h2>
+          <p class="lead-text" data-cfg="about"></p>
+          
+          <div class="pill-features-list">
+            <div class="p-feat">
+              <div class="p-feat-num">01</div>
+              <div>
+                <h4>Specialized Paper Roll Handling</h4>
+                <p>Skilled teams and proper loading techniques ensure safe, damage-free transport for newspaper printing presses and paper manufacturing mills.</p>
+              </div>
+            </div>
+            <div class="p-feat">
+              <div class="p-feat-num">02</div>
+              <div>
+                <h4>Heavy-Duty 12 & 14-Tyre Fleet</h4>
+                <p>Well-maintained lorries engineered for 25-ton and 30-ton operations, ensuring uncompromised mechanical reliability along major national corridors.</p>
+              </div>
+            </div>
+            <div class="p-feat">
+              <div class="p-feat-num">03</div>
+              <div>
+                <h4>Real-Time Live Tracking Support</h4>
+                <p>Continuous GPS telematics tracking to monitor your consignment at every milestone, ensuring total transparency, safety, and exact arrival schedules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage & City Hubs -->
+  <section class="page corridors-section" id="coverage">
+    <div class="wrap">
+      <div class="section-head-split reveal">
+        <div>
+          <span class="eyebrow-red">STATEWIDE & INTERSTATE HUBS</span>
+          <h2 class="title-bold">STRATEGIC FREIGHT CORRIDORS</h2>
+          <p class="lead-text">Direct scheduled lanes connecting Burhanpur, Raipur, and major industrial centers across India.</p>
+        </div>
+        <div class="search-filter-box">
+          <input type="text" id="laneSearch" placeholder="Search city (e.g. Burhanpur, Raipur, Mumbai)...">
+        </div>
+      </div>
+
+      <div class="lane-filter-pills reveal" id="laneFilters">
+        <button class="lane-filter-btn active" data-filter="all">All Hubs</button>
+        <button class="lane-filter-btn" data-filter="mp">M.P. & C.G. Base Hubs</button>
+        <button class="lane-filter-btn" data-filter="interstate">Key National Routes</button>
+      </div>
+
+      <div class="chips-container reveal">
+        <div class="chips-grid" id="cities"></div>
+      </div>
+
+      <!-- Corridor Cards Showcase -->
+      <div class="key-corridors reveal">
+        <div class="corridor-box">
+          <div class="corridor-top">
+            <span class="corridor-name">Burhanpur (M.P.) ⮂ Maharashtra / Mumbai</span>
+            <span class="corridor-flag">DAILY LANE</span>
+          </div>
+          <div class="corridor-desc">High-frequency industrial runs &bull; Paper roll consignments & textile machinery &bull; 12 & 14-tyre lorries</div>
+        </div>
+        <div class="corridor-box">
+          <div class="corridor-top">
+            <span class="corridor-name">Raipur (C.G.) ⮂ Central & Eastern Corridors</span>
+            <span class="corridor-flag">HEAVY BULK</span>
+          </div>
+          <div class="corridor-desc">Steel, iron, and heavy industrial cargo &bull; Direct point-to-point FTL with zero transshipment</div>
+        </div>
+        <div class="corridor-box">
+          <div class="corridor-top">
+            <span class="corridor-name">Madhya Pradesh ⮂ Delhi NCR & Gujarat</span>
+            <span class="corridor-flag">EXPRESS TRANSIT</span>
+          </div>
+          <div class="corridor-desc">Scheduled interstate bulk moves with continuous live GPS tracking and proof of delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Booking Section (Pre-populated with Authentic Numbers & Vehicle Types) -->
+  <section class="page quote-booking-section" id="quote">
+    <div class="wrap">
+      <div class="quote-container-split">
+        <div class="quote-hero-pane reveal">
+          <span class="eyebrow-red">LET'S HAVE A CHAT</span>
+          <h2 class="title-bold">CONTACT US FOR A FREE QUOTATION</h2>
+          <p class="lead-text">"We focus on transport so you can focus on growth." Get in touch with our operations desk in Burhanpur or Raipur for instant vehicle booking.</p>
+          
+          <div class="quote-guarantees">
+            <div class="guarantee-item">
+              <div class="g-icon">📞</div>
+              <div>
+                <strong>Direct Dispatch Helpline</strong>
+                <span>+91 8770330395 (Call or WhatsApp)</span>
+              </div>
+            </div>
+            <div class="guarantee-item">
+              <div class="g-icon">🏢</div>
+              <div>
+                <strong>Head Office Address</strong>
+                <span>Truck Parking, Transport Nagar, Burhanpur, 450331, (M.P.)</span>
+              </div>
+            </div>
+            <div class="guarantee-item">
+              <div class="g-icon">✉️</div>
+              <div>
+                <strong>Official Email Desk</strong>
+                <span>madhyapradeshfrieghtcarrier@yahoo.in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-form-card reveal">
+          <form id="qf">
+            <div class="form-banner">
+              <h3>Fast Freight Quotation Request</h3>
+              <p>Direct WhatsApp dispatch or email confirmation</p>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-field">
+                <label>Your Name *</label>
+                <input name="name" id="qName" placeholder="e.g. Rajesh Sharma" required>
+              </div>
+              <div class="form-field">
+                <label>Contact Number / WhatsApp *</label>
+                <input name="phone" id="qPhone" type="tel" placeholder="+91 8770330395" required>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-field">
+                <label>Pickup Origin City</label>
+                <input name="from" id="qFrom" placeholder="e.g. Burhanpur, Transport Nagar" required>
+              </div>
+              <div class="form-field">
+                <label>Delivery Destination City</label>
+                <input name="to" id="qTo" placeholder="e.g. Raipur, C.G. / Mumbai" required>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-field">
+                <label>Vehicle Type / Service Required</label>
+                <select name="type" id="qType">
+                  <option value="12 Tyre (25 Tons)">12 Tyre (25 Tons)</option>
+                  <option value="14 Tyre (30 Tons)">14 Tyre (30 Tons)</option>
+                  <option value="Specialized Paper Roll Lifting">Specialized Paper Roll Lifting</option>
+                  <option value="Transport Contractor (FTL)">Transport Contractor (FTL)</option>
+                  <option value="Other">Other Bulk Cargo</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Approx. Weight (Tons)</label>
+                <input name="weight" id="qWeight" placeholder="e.g. 25 Tons / 30 Tons">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label>Message / Consignment Details</label>
+              <textarea name="msg" id="qMsg" rows="3" placeholder="Nature of material (paper rolls, bulk cargo, industrial steel), target dispatch schedule, special handling requirements"></textarea>
+            </div>
+
+            <div class="form-actions-row">
+              <button type="submit" class="btn btn-red-action">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.07-1.11-.065-.251-.08-.577-.197-1.002-.383-1.802-.79-2.973-2.617-3.064-2.738-.09-.12-.731-.973-.731-1.854 0-.882.463-1.314.627-1.492.164-.179.358-.224.478-.224.12 0 .24.002.344.007.11.005.258-.042.404.308.15.358.513 1.25.558 1.341.045.09.075.195.015.314-.06.12-.09.195-.179.3-.09.105-.189.233-.27.313-.09.09-.184.188-.079.369.105.18.468.772 1.004 1.249.691.614 1.274.805 1.454.895.18.09.285.075.39-.045.105-.12.45-.524.57-.704.12-.18.24-.15.405-.09.165.06 1.05.495 1.23.585.18.09.3.135.345.21.045.075.045.435-.099.84z"/></svg>
+                <span>Send WhatsApp Inquiry</span>
+              </button>
+              <button type="button" id="mail" class="btn btn-outline-dark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>Send by Email</span>
+              </button>
+            </div>
+          </form>
+          <p class="form-safe-note">🔒 Fast connection directly to the MPFC operations room. Zero delays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Red & White Footer -->
+  <footer class="footer-wrap">
+    <div class="wrap footer-grid">
+      <div class="footer-brand-pane">
+        <img src="assets/mpfc-orig-logo.png" alt="MPFC - Madhya Pradesh Freight Carrier" class="mpfc-footer-logo">
+        <p class="footer-tagline">"We focus on transport so you can focus on growth." Trusted transport contractor with over 20 years of experience serving industries pan-India.</p>
+        <div class="footer-meta-badges">
+          <span>20+ YEARS EXPERIENCE</span> &bull; <span>PAN-INDIA PERMIT</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact & Operating Hubs</h4>
+        <p class="footer-addr"><strong>Burhanpur Hub:</strong><br>Truck Parking, Transport Nagar, Burhanpur, 450331, (M.P.)</p>
+        <p class="footer-addr"><strong>Raipur Hub:</strong><br>Key Logistics Center, Raipur, (C.G.)</p>
+        <div class="footer-contact-links">
+          <a href="tel:+918770330395" class="f-contact-pill">+91 8770330395</a>
+          <a href="mailto:madhyapradeshfrieghtcarrier@yahoo.in" class="f-contact-pill">madhyapradeshfrieghtcarrier@yahoo.in</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Core Capabilities</h4>
+        <ul class="footer-nav-list">
+          <li><a href="#services">Specialized Paper Roll Lifting</a></li>
+          <li><a href="#fleet-models">12-Tyre Heavy Lorries (25 Tons)</a></li>
+          <li><a href="#fleet-models">14-Tyre Multi-Axle (30 Tons)</a></li>
+          <li><a href="#services">FTL & Bulk Consignments</a></li>
+          <li><a href="#services">Real-Time Vehicle Tracking</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Massive Background Typography -->
+    <div class="footer-big-bg">MPFC</div>
+
+    <div class="wrap footer-bottom-bar">
+      <div>&copy; <span id="yr"></span> MP Freight Carrier (MPFC). All Rights Reserved.</div>
+      <div class="back-to-top" id="backToTop">Back to Top ↑</div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky Action Button -->
+  <a href="#quote" class="floating-red-cta" id="floatingCta" title="Quick Booking">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span>Book Lorry</span>
+  </a>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/hero.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
