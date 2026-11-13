@@ -20,15 +20,17 @@ function layout(){
    w=1920*s;h=1080*s;
    l=(vw-w)/2;t=(vh-h)/2;
  } else {
-   // Mobile / Portrait: Maintain full aspect ratio so the entire vehicle fits on screen
-   w=Math.max(vw*1.15, 420);
+   // Cover mobile view so truck and black road fill cleanly
+   w=vw*1.65;
    h=w*9/16;
    l=(vw-w)/2;
-   t=Math.max(70, vh*0.35 - h*0.5);
+   t=vh*0.38 - h*0.42;
  }
  Object.assign(v.style,{width:w+'px',height:h+'px',left:l+'px',top:t+'px'});
- R.style.setProperty('--edge-px',Math.round(t+h*0.82)+'px');
- R.style.setProperty('--l',Math.round(t+h)+'px');
+ const edgePx = t + 0.418 * h;
+ const groundPx = t + 0.83 * h;
+ R.style.setProperty('--edge-px', Math.round(edgePx) + 'px');
+ R.style.setProperty('--l', Math.round(groundPx) + 'px');
  const want=vw<=900?LO:HI;
  if(want!==src){src=want;v.src=want;v.load()}
  stripW=strip.scrollWidth;giantW=giant.scrollWidth;

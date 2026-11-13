@@ -311,13 +311,16 @@ body {
   height: 100vh;
   height: 100lvh;
   overflow: hidden;
-  background: #fbfbfc;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff var(--edge-px), #111113 var(--edge-px), #111113 100%);
 }
 
-/* Modern Architectural Technical Blueprint Grid (Visible & Elegant) */
+/* Modern Architectural Technical Blueprint Grid (Dots top only) */
 .hero-tech-grid {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--edge-px);
   background-image: 
     radial-gradient(rgba(217, 4, 41, 0.16) 1.5px, transparent 1.5px),
     linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
@@ -330,32 +333,13 @@ body {
 /* Subtle modern radial focus vignette */
 .hero-radial-vignette {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(217, 4, 41, 0.04) 75%, rgba(240, 242, 245, 0.6) 100%);
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* High-Impact Watermark Typographic Accent */
-.hero-watermark {
-  position: absolute;
-  top: 15%;
+  top: 0;
   left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  right: 0;
+  height: var(--edge-px);
+  background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(217, 4, 41, 0.04) 75%, rgba(240, 242, 245, 0.4) 100%);
   pointer-events: none;
   z-index: 5;
-  user-select: none;
-}
-
-.watermark-text {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(38px, 6.5vw, 96px);
-  color: rgba(217, 4, 41, 0.08);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  white-space: nowrap;
 }
 
 video {
@@ -363,9 +347,7 @@ video {
   display: block;
   max-width: none;
   pointer-events: none;
-  filter: contrast(1.05) brightness(1);
   z-index: 2;
-  mix-blend-mode: multiply;
 }
 
 .video-overlay-red {
@@ -520,10 +502,10 @@ video {
 .strip {
   position: absolute;
   left: 0;
-  top: calc(var(--u) * 60);
+  top: calc(var(--edge-px) + 24px);
   display: flex;
   gap: calc(var(--u) * 90);
-  color: #111;
+  color: #fff;
   will-change: transform;
   transform: translateX(100vw);
 }
@@ -544,9 +526,9 @@ video {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--red-deep);
-  background: var(--red-soft);
-  border: 1px solid var(--red-border);
+  color: #ff99a0;
+  background: rgba(217, 4, 41, 0.25);
+  border: 1px solid rgba(255, 153, 160, 0.4);
   padding: 6px 14px;
   border-radius: 99px;
   width: fit-content;
@@ -555,9 +537,9 @@ video {
 .badge-red-dot {
   width: 6px;
   height: 6px;
-  background: var(--red-primary);
+  background: var(--red-light);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--red-glow);
+  box-shadow: 0 0 8px var(--red-light);
 }
 
 .hero-h2 {
@@ -565,11 +547,11 @@ video {
   text-transform: uppercase;
   white-space: nowrap;
   letter-spacing: 0.02em;
-  color: var(--gray-900);
+  color: #ffffff;
 }
 
 .hero-red-highlight {
-  color: var(--red-primary);
+  color: var(--red-light);
 }
 
 .paras {
@@ -578,7 +560,7 @@ video {
   gap: calc(var(--u) * 14);
   font-size: calc(var(--u) * 13.5);
   line-height: 1.6;
-  color: var(--gray-600);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .hero-actions {
@@ -614,16 +596,15 @@ video {
 }
 
 .secondary-ghost {
-  background: #ffffff;
-  color: var(--gray-900);
-  border: 1.5px solid var(--gray-300);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .secondary-ghost:hover {
-  background: var(--gray-100);
-  border-color: var(--red-primary);
-  color: var(--red-primary);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
 }
 
 .cards {
@@ -635,18 +616,20 @@ video {
   width: calc(var(--u) * 280);
   flex: none;
   padding: calc(var(--u) * 28);
-  background: #ffffff;
-  border: 1.5px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   position: relative;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
 }
 
 .red-card:hover {
   transform: translateY(-8px);
-  border-color: var(--red-border);
-  box-shadow: 0 20px 40px rgba(217, 4, 41, 0.12);
+  background: rgba(217, 4, 41, 0.15);
+  border-color: var(--red-light);
+  box-shadow: 0 20px 40px rgba(217, 4, 41, 0.3);
 }
 
 .card-num {
@@ -655,18 +638,18 @@ video {
   right: 22px;
   font-family: 'Anton', sans-serif;
   font-size: 28px;
-  color: var(--gray-200);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .red-card:hover .card-num {
-  color: var(--red-primary);
+  color: var(--red-light);
 }
 
 .card-icon-wrap {
   width: 48px;
   height: 48px;
-  background: var(--red-soft);
-  border: 1px solid var(--red-border);
+  background: rgba(217, 4, 41, 0.25);
+  border: 1px solid rgba(239, 35, 60, 0.4);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -684,22 +667,17 @@ video {
   width: 26px;
   height: 26px;
   fill: none;
-  stroke: var(--red-primary);
+  stroke: #ffffff;
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: stroke 0.3s ease;
-}
-
-.red-card:hover .card svg {
-  stroke: #ffffff;
 }
 
 .card-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   text-transform: uppercase;
-  color: var(--red-primary);
+  color: #ff858d;
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
@@ -710,13 +688,13 @@ video {
   font: 400 calc(var(--u) * 28) / 1.05 'Anton', sans-serif;
   text-transform: uppercase;
   margin-bottom: calc(var(--u) * 14);
-  color: var(--gray-900);
+  color: #ffffff;
 }
 
 .card p {
   font-size: calc(var(--u) * 13);
   line-height: 1.55;
-  color: var(--gray-600);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .pill-red-sticky {
@@ -2129,7 +2107,7 @@ form {
     display: none;
   }
   .strip {
-    top: calc(var(--edge-px) - 60px);
+    top: calc(var(--edge-px) + 16px);
     gap: calc(var(--u) * 44);
     padding-left: 16px;
   }
@@ -2137,12 +2115,12 @@ form {
     gap: 14px;
   }
   .hero-h2 {
-    font-size: clamp(28px, 7vw, 36px);
+    font-size: clamp(26px, 6.5vw, 34px);
     white-space: normal;
     line-height: 1.05;
   }
   .paras {
-    width: min(90vw, 320px);
+    width: min(88vw, 310px);
     font-size: 12.5px;
   }
   .red-card {
@@ -2161,8 +2139,5 @@ form {
   }
   .scroll-indicator {
     bottom: 14px;
-  }
-}
-    width: 100%;
   }
 }
