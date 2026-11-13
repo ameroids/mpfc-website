@@ -2107,7 +2107,7 @@ form {
     display: none;
   }
   .strip {
-    top: calc(var(--edge-px) + 16px);
+    top: 40px;
     gap: calc(var(--u) * 44);
     padding-left: 16px;
   }

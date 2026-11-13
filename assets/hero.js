@@ -14,21 +14,26 @@ function layout(){
  const mob=vw<768||vw<=vh;
  const u=mob?Math.min(vw/430,1.2):Math.min(vw/1440,vh/960);
  R.style.setProperty('--u',u+'px');
- let w,h,l,t;
+ let w,h,l,t,edgePx,groundPx;
  if(!mob){
    const s=Math.max(vw/1920,vh/1080);
    w=1920*s;h=1080*s;
    l=(vw-w)/2;t=(vh-h)/2;
+   edgePx = t + 0.448 * h;
+   groundPx = t + 0.829 * h;
  } else {
-   // Cover mobile view so truck and black road fill cleanly
-   w=vw*1.65;
-   h=w*9/16;
-   l=(vw-w)/2;
-   t=vh*0.38 - h*0.42;
+   // Mobile / Portrait: Match exact video proportions
+   // The truck wheels sit at 44.8% of video height; the ground line is t + 0.448 * h.
+   // We position the road surface at 45% of viewport height:
+   // t + 0.448 * h = 0.45 * vh => t = 0.45 * vh - 0.448 * h
+   w = Math.max(vw * 1.5, 540);
+   h = w * 9 / 16;
+   l = (vw - w) / 2;
+   edgePx = Math.round(vh * 0.45);
+   t = edgePx - 0.448 * h;
+   groundPx = t + 0.829 * h;
  }
  Object.assign(v.style,{width:w+'px',height:h+'px',left:l+'px',top:t+'px'});
- const edgePx = t + 0.418 * h;
- const groundPx = t + 0.83 * h;
  R.style.setProperty('--edge-px', Math.round(edgePx) + 'px');
  R.style.setProperty('--l', Math.round(groundPx) + 'px');
  const want=vw<=900?LO:HI;
